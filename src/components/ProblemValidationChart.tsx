@@ -56,6 +56,9 @@ const ProblemValidationChart: React.FC<ProblemValidationChartProps> = ({ classNa
           <InteractiveChart 
             type="pie" 
             data={problemData}
+            config={{
+              value: 'Value'
+            }}
           />
         )}
         

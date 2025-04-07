@@ -109,6 +109,7 @@ const InteractiveChart: React.FC<InteractiveChartProps> = ({
                 <Bar 
                   key={key} 
                   dataKey={key} 
+                  name={config[key]}
                   fill={COLORS[index % COLORS.length]} 
                   radius={[4, 4, 0, 0]} 
                   className="hover:opacity-80 transition-opacity cursor-pointer" 
@@ -126,10 +127,12 @@ const InteractiveChart: React.FC<InteractiveChartProps> = ({
                 data={data}
                 cx="50%"
                 cy="50%"
+                labelLine={false}
                 innerRadius={60}
                 outerRadius={80}
                 paddingAngle={1}
                 dataKey="value"
+                nameKey="name"
                 onMouseEnter={onPieEnter}
                 className="hover:opacity-90 transition-opacity cursor-pointer"
               >
@@ -142,7 +145,7 @@ const InteractiveChart: React.FC<InteractiveChartProps> = ({
                   />
                 ))}
               </Pie>
-              <ChartTooltip content={<ChartTooltipContent />} />
+              <ChartTooltip content={<ChartTooltipContent nameKey="name" />} />
               <Legend 
                 verticalAlign="bottom" 
                 height={36} 
@@ -172,7 +175,8 @@ const InteractiveChart: React.FC<InteractiveChartProps> = ({
                 <Line 
                   key={key} 
                   type="monotone" 
-                  dataKey={key} 
+                  dataKey={key}
+                  name={config[key]}
                   stroke={COLORS[index % COLORS.length]} 
                   strokeWidth={2} 
                   dot={{ r: 3 }} 
@@ -209,7 +213,8 @@ const InteractiveChart: React.FC<InteractiveChartProps> = ({
                 <Area 
                   key={key} 
                   type="monotone" 
-                  dataKey={key} 
+                  dataKey={key}
+                  name={config[key]}
                   fill={`${COLORS[index % COLORS.length]}40`} 
                   stroke={COLORS[index % COLORS.length]} 
                   className="hover:opacity-80 transition-opacity cursor-pointer"
