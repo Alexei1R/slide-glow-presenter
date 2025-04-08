@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import SlideNavigation from "./SlideNavigation";
 
@@ -46,7 +45,7 @@ const PresentationLayout: React.FC<PresentationLayoutProps> = ({
       <div className="fixed top-0 right-1/3 w-1 h-[20vh] bg-gradient-to-b from-accent/20 to-transparent blur-sm"></div>
       <div className="fixed top-0 left-2/3 w-1 h-[25vh] bg-gradient-to-b from-purple-500/20 to-transparent blur-sm"></div>
       
-      <div className="max-w-6xl mx-auto flex flex-col gap-8 relative z-10">
+      <div className="w-[90%] mx-auto flex flex-col gap-8 relative z-10">
         {children}
       </div>
       

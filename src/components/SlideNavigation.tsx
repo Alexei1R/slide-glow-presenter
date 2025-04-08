@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ChevronLeft, ChevronRight, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,7 +20,14 @@ const SlideNavigation: React.FC<SlideNavigationProps> = ({
       setCurrentSlide(index);
       const element = document.getElementById(slideIds[index]);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        const elementRect = element.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.pageYOffset;
+        const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+        
+        window.scrollTo({
+          top: middle,
+          behavior: "smooth"
+        });
       }
     }
   };
