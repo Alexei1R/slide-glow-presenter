@@ -12,6 +12,44 @@ const PresentationLayout: React.FC<PresentationLayoutProps> = ({
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Function to navigate to a specific slide
+  const navigateToSlide = (index: number) => {
+    if (index >= 0 && index < slideIds.length) {
+      setCurrentSlide(index);
+      const element = document.getElementById(slideIds[index]);
+      if (element) {
+        const elementRect = element.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.pageYOffset;
+        const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+        
+        window.scrollTo({
+          top: middle,
+          behavior: "smooth"
+        });
+
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 100);
+      }
+    }
+  };
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        event.preventDefault();
+        navigateToSlide(currentSlide - 1);
+      } else if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        event.preventDefault();
+        navigateToSlide(currentSlide + 1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentSlide, slideIds]);
+
   // Detect which slide is in view
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +90,7 @@ const PresentationLayout: React.FC<PresentationLayoutProps> = ({
       <SlideNavigation
         totalSlides={slideIds.length}
         currentSlide={currentSlide}
-        setCurrentSlide={setCurrentSlide}
+        setCurrentSlide={navigateToSlide}
         slideIds={slideIds}
       />
     </div>

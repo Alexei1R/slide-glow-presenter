@@ -15,27 +15,10 @@ const SlideNavigation: React.FC<SlideNavigationProps> = ({
   setCurrentSlide,
   slideIds,
 }) => {
-  const navigateToSlide = (index: number) => {
-    if (index >= 0 && index < totalSlides) {
-      setCurrentSlide(index);
-      const element = document.getElementById(slideIds[index]);
-      if (element) {
-        const elementRect = element.getBoundingClientRect();
-        const absoluteElementTop = elementRect.top + window.pageYOffset;
-        const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
-        
-        window.scrollTo({
-          top: middle,
-          behavior: "smooth"
-        });
-      }
-    }
-  };
-
   return (
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-30 glass px-4 py-2 rounded-full flex items-center gap-4">
       <button
-        onClick={() => navigateToSlide(currentSlide - 1)}
+        onClick={() => setCurrentSlide(currentSlide - 1)}
         disabled={currentSlide === 0}
         className={cn(
           "p-2 rounded-full transition-all duration-300",
@@ -60,7 +43,7 @@ const SlideNavigation: React.FC<SlideNavigationProps> = ({
       </div>
       
       <button
-        onClick={() => navigateToSlide(currentSlide + 1)}
+        onClick={() => setCurrentSlide(currentSlide + 1)}
         disabled={currentSlide === totalSlides - 1}
         className={cn(
           "p-2 rounded-full transition-all duration-300",

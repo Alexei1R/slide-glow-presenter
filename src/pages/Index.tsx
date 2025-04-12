@@ -4,7 +4,11 @@ import Slide from "@/components/Slide";
 import LogoPlaceholder from "@/components/LogoPlaceholder";
 import {
   ArrowRight, CheckCircle2, Users, PieChart, Target,
-  Rocket, DollarSign, BarChart3, Star, ThumbsUp
+  Rocket, DollarSign, BarChart3, Star, ThumbsUp,
+  LineChart, MessageSquare, TestTube, TrendingUp, Layers, Calendar,
+  MousePointer, PenTool, Award, Share2, FileText, Handshake, Mail,
+  AlertTriangle, Lightbulb, Zap, HeartHandshake, Wallet,
+  CheckCircle, Recycle, Leaf, Globe
 } from "lucide-react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import ProblemValidationChart from "@/components/ProblemValidationChart";
@@ -12,18 +16,18 @@ import RevenueChart from "@/components/RevenueChart";
 import InteractiveChart from "@/components/InteractiveChart";
 
 const slideIds = [
-  "intro",
-  "customer-journey",
-  "problems",
-  "value",
-  "solution",
-  "channels",
-  "revenue",
-  "costs",
-  "metrics",
-  "differentiation",
-  "team",
-  "feedback"
+  "intro",                    // Slide 1: Introduction
+  "customer-journey",         // Slide 2: Customer Journey Map
+  "solution-details",         // Slide 3: Solution Details
+  "goals-launch",            // Slide 4: Goals & Launch
+  "solution",                // Slide 5: Solution Showcase
+  "user-reviews",            // Slide 6: User Reviews
+  "revenue",                 // Slide 7: Revenue Model
+  "post-lansare",            // Slide 8: Post-Launch
+  "plan-marketing",          // Slide 9: Marketing Plan
+  "business-model-canvas",   // Slide 10: Business Model Canvas
+  "feedback",                // Slide 11: Feedback
+  "conclusion"               // Slide 12: Conclusion
 ];
 
 // Data for charts
@@ -520,7 +524,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
             <div className="bg-black/30 p-3 rounded-lg text-center">
               <p className="text-sm font-medium text-green-300">FAZA 1</p>
-              <p className="text-xs text-gray-300">Pilot în Cluj-Napoca cu 50 aparate</p>
+              <p className="text-xs text-gray-300">Pilot în Chisinau cu 50 aparate</p>
             </div>
             <div className="bg-black/30 p-3 rounded-lg text-center">
               <p className="text-sm font-medium text-green-300">FAZA 2</p>
@@ -528,7 +532,7 @@ const Index = () => {
             </div>
             <div className="bg-black/30 p-3 rounded-lg text-center">
               <p className="text-sm font-medium text-green-300">FAZA 3</p>
-              <p className="text-xs text-gray-300">Expansiune națională și franchising</p>
+              <p className="text-xs text-gray-300">Expansiune internationala și franchising</p>
             </div>
           </div>
           <p className="text-sm text-gray-200 mt-2">
@@ -588,30 +592,363 @@ const Index = () => {
 
 
 
+<Slide id="post-lansare" variant="center" accentColor="purple">
+      {/* Background with gradient and patterns */}
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+        <div className="absolute bg-gray-900/90 inset-0 z-10"></div>
+        
+        {/* Abstract shapes */}
+        <div className="absolute top-[-5%] right-[-10%] w-[40%] h-[40%] rounded-full bg-gradient-to-br from-purple-700/20 to-purple-500/10 blur-3xl"></div>
+        <div className="absolute bottom-[-15%] left-[-5%] w-[35%] h-[35%] rounded-full bg-gradient-to-tr from-purple-600/20 to-indigo-400/5 blur-3xl"></div>
+        
+        {/* Decorative grid pattern */}
+        <div className="absolute inset-0 opacity-10" 
+             style={{ 
+               backgroundImage: 'radial-gradient(circle, rgba(167, 139, 250, 0.2) 1px, transparent 1px)', 
+               backgroundSize: '30px 30px' 
+             }}>
+        </div>
+        
+        {/* Random small dots */}
+        {Array.from({ length: 30 }).map((_, i) => (
+          <div 
+            key={i}
+            className="absolute w-1 h-1 rounded-full bg-purple-400/40"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              opacity: Math.random() * 0.5 + 0.2,
+            }}
+          ></div>
+        ))}
+      </div>
+
+      {/* Main content */}
+      <div className="relative z-30 flex flex-col items-center w-full h-full p-8">
+        {/* Title */}
+        <div className="flex items-center gap-3 mb-8">
+          <Rocket className="text-purple-400" size={32} />
+          <h2 className="text-4xl md:text-5xl font-black text-purple-400"
+            style={{ textShadow: "0 0 20px rgba(167, 139, 250, 0.4)" }}>
+            POST-LANSARE
+          </h2>
+        </div>
+        
+        <p className="text-lg text-white/90 text-center max-w-3xl mb-8">
+          După lansare, ne concentrăm pe scalare și îmbunătățire continuă:
+        </p>
+        
+        {/* Strategy cards in a grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl w-full">
+          {/* Card 1 */}
+          <div className="bg-black/40 backdrop-blur-sm p-5 rounded-xl border border-purple-500/20 transition-all duration-300 hover:bg-black/50 hover:scale-[1.02]">
+            <div className="flex items-center gap-3 mb-3">
+              <LineChart className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Optimizare bazată pe metrici reali</h3>
+            </div>
+            <p className="text-gray-300">
+              Analiză detaliată a datelor de retention și conversie pentru îmbunătățirea continuă a produsului
+            </p>
+          </div>
+          
+          {/* Card 2 */}
+          <div className="bg-black/40 backdrop-blur-sm p-5 rounded-xl border border-purple-500/20 transition-all duration-300 hover:bg-black/50 hover:scale-[1.02]">
+            <div className="flex items-center gap-3 mb-3">
+              <MessageSquare className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Integrare feedback</h3>
+            </div>
+            <p className="text-gray-300">
+              Sistem robust de colectare feedback din comunitate și implementare suport dedicat pentru utilizatori
+            </p>
+          </div>
+          
+          {/* Card 3 */}
+          <div className="bg-black/40 backdrop-blur-sm p-5 rounded-xl border border-purple-500/20 transition-all duration-300 hover:bg-black/50 hover:scale-[1.02]">
+            <div className="flex items-center gap-3 mb-3">
+              <TestTube className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">A/B testing</h3>
+            </div>
+            <p className="text-gray-300">
+              Testare continuă pentru funnel-uri și îmbunătățiri UI/UX bazate pe date reale de utilizare
+            </p>
+          </div>
+          
+          {/* Card 4 */}
+          <div className="bg-black/40 backdrop-blur-sm p-5 rounded-xl border border-purple-500/20 transition-all duration-300 hover:bg-black/50 hover:scale-[1.02]">
+            <div className="flex items-center gap-3 mb-3">
+              <TrendingUp className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Campanii growth</h3>
+            </div>
+            <p className="text-gray-300">
+              Strategii paid & organic pentru creștere accelerată a bazei de utilizatori și extindere pe noi piețe
+            </p>
+          </div>
+          
+          {/* Card 5 */}
+          <div className="bg-black/40 backdrop-blur-sm p-5 rounded-xl border border-purple-500/20 transition-all duration-300 hover:bg-black/50 hover:scale-[1.02]">
+            <div className="flex items-center gap-3 mb-3">
+              <Layers className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Roadmap deschis</h3>
+            </div>
+            <p className="text-gray-300">
+              Dezvoltare transparentă cu roadmap accesibil comunității și lansări iterative rapide (bi-lunare)
+            </p>
+          </div>
+          
+          {/* Card 6 - Additional metrics */}
+          <div className="bg-black/40 backdrop-blur-sm p-5 rounded-xl border border-purple-500/20 transition-all duration-300 hover:bg-black/50 hover:scale-[1.02]">
+            <div className="flex items-center gap-3 mb-3">
+              <BarChart3 className="h-5 w-5 text-blue-500" />
+              <span className="text-sm text-gray-600">Analiză detaliată a feedback-ului</span>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-black/30 p-2 rounded-lg text-center">
+                <p className="text-xs text-gray-400">Retenție la 30 zile</p>
+                <p className="text-lg font-bold text-purple-300">40%+</p>
+              </div>
+              <div className="bg-black/30 p-2 rounded-lg text-center">
+                <p className="text-xs text-gray-400">Onboarding</p>
+                <p className="text-lg font-bold text-purple-300">90%+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Timeline at the bottom */}
+        <div className="w-full max-w-4xl mt-8">
+          <div className="h-24 relative">
+            {/* Timeline line */}
+            <div className="absolute top-12 left-4 right-4 h-1 bg-purple-500/30"></div>
+            
+            {/* Timeline points */}
+            {[
+              { month: "Luna 1", label: "Lansare" },
+              { month: "Luna 2", label: "Iterație 1" },
+              { month: "Luna 4", label: "Scalare" },
+              { month: "Luna 6", label: "Expansiune" }
+            ].map((point, index) => {
+              const position = index * (100 / 3);
+              return (
+                <div key={index} className="absolute" style={{ left: `${position}%`, top: "8px" }}>
+                  <div className="w-8 h-8 rounded-full bg-purple-500 border-2 border-white flex items-center justify-center">
+                    <Calendar className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="text-center mt-4">
+                    <p className="text-xs text-purple-300">{point.month}</p>
+                    <p className="text-sm font-medium text-white">{point.label}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </Slide>
 
 
 
 
+<Slide id="plan-marketing" variant="center" accentColor="purple">
+      {/* Background with gradient */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 via-gray-900/95 to-indigo-900/90"></div>
+        
+        {/* Decorative pattern overlay */}
+        <div className="absolute inset-0 opacity-5" 
+             style={{ 
+               backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 40 40\'%3E%3Cg fill-rule=\'evenodd\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+             }}>
+        </div>
+      </div>
 
-
+      {/* Main content */}
+      <div className="relative z-30 flex flex-col items-center w-full h-full p-8">
+        {/* Title */}
+        <div className="flex items-center gap-3 mb-8">
+          <Target className="text-purple-400" size={32} />
+          <h2 className="text-4xl md:text-5xl font-black text-purple-400"
+            style={{ textShadow: "0 0 20px rgba(167, 139, 250, 0.4)" }}>
+            PLAN MARKETING
+          </h2>
+        </div>
+        
+        <p className="text-lg text-white/90 text-center max-w-3xl mb-8">
+          Ne concentrăm pe un marketing axat pe valoare și diferențiere:
+        </p>
+        
+        {/* Marketing strategies in a grid layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl w-full">
+          {/* Strategy 1 */}
+          <div className="glass p-5 rounded-xl bg-black/20 border border-purple-500/20 hover:bg-black/30 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <MousePointer className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Targetare exactă</h3>
+            </div>
+            <p className="text-gray-300 mb-3">
+              Strategii de targeting personalizate pentru segmente specifice:
+            </p>
+            <div className="grid grid-cols-3 gap-2">
+              <div className="bg-black/30 p-2 rounded-lg text-center flex flex-col items-center">
+                <Users className="text-purple-300 mb-1" size={18} />
+                <p className="text-xs text-gray-300">Startup-uri</p>
+              </div>
+              <div className="bg-black/30 p-2 rounded-lg text-center flex flex-col items-center">
+                <PenTool className="text-purple-300 mb-1" size={18} />
+                <p className="text-xs text-gray-300">Freelanceri</p>
+              </div>
+              <div className="bg-black/30 p-2 rounded-lg text-center flex flex-col items-center">
+                <Award className="text-purple-300 mb-1" size={18} />
+                <p className="text-xs text-gray-300">Fondatori</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Strategy 2 */}
+          <div className="glass p-5 rounded-xl bg-black/20 border border-purple-500/20 hover:bg-black/30 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <Share2 className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Campanii social media</h3>
+            </div>
+            <p className="text-gray-300 mb-3">
+              Prezență activă pe platforme relevante pentru audiența țintă:
+            </p>
+            <div className="grid grid-cols-3 gap-2">
+              <div className="bg-black/30 p-2 rounded-lg text-center">
+                <p className="text-xs text-gray-300">Facebook / Instagram</p>
+              </div>
+              <div className="bg-black/30 p-2 rounded-lg text-center">
+                <p className="text-xs text-gray-300">Discord</p>
+              </div>
+              <div className="bg-black/30 p-2 rounded-lg text-center">
+                <p className="text-xs text-gray-300">Reddit</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Strategy 3 */}
+          <div className="glass p-5 rounded-xl bg-black/20 border border-purple-500/20 hover:bg-black/30 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <FileText className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Conținut original</h3>
+            </div>
+            <p className="text-gray-300">
+              Crearea unui mix diversificat de conținut de înaltă calitate:
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                Articole de specialitate și tutoriale
+              </li>
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                Video-uri demonstrative și webinars
+              </li>
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                Studii de caz și testimoniale
+              </li>
+            </ul>
+          </div>
+          
+          {/* Strategy 4 */}
+          <div className="glass p-5 rounded-xl bg-black/20 border border-purple-500/20 hover:bg-black/30 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <Handshake className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Parteneriate strategice</h3>
+            </div>
+            <p className="text-gray-300">
+              Colaborări cu organizații care pot amplifica mesajul nostru:
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                Incubatoare și acceleratoare de startup-uri
+              </li>
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                Comunități de dezvoltatori și creatori
+              </li>
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                Influenceri din domeniul tech
+              </li>
+            </ul>
+          </div>
+          
+          {/* Strategy 5 - Full width */}
+          <div className="glass p-5 rounded-xl bg-black/20 border border-purple-500/20 hover:bg-black/30 transition-all duration-300 md:col-span-2">
+            <div className="flex items-center gap-3 mb-4">
+              <Mail className="text-purple-400" size={24} />
+              <h3 className="text-xl font-bold text-white">Preînregistrare + newsletter</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="md:col-span-2">
+                <p className="text-gray-300 mb-3">
+                  Strategie de atragere early adopters prin campanii de email și oferte exclusive:
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-gray-300">
+                    <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                    Newsletter săptămânal cu insights și update-uri
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-gray-300">
+                    <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                    Program de beta testing cu feedback prioritizat
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-gray-300">
+                    <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                    Beneficii exclusive pentru early adopters
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-black/30 p-4 rounded-lg flex flex-col items-center justify-center">
+                <TrendingUp className="text-purple-400 mb-2" size={28} />
+                <p className="text-sm text-center text-gray-300">Obiectiv:</p>
+                <p className="text-xl font-bold text-white">5,000+</p>
+                <p className="text-xs text-center text-gray-400">preînregistrări înainte de lansare</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Budget allocation - Bottom bar */}
+        <div className="w-full max-w-4xl mt-8">
+          <h4 className="text-sm text-gray-300 mb-2">Alocarea bugetului de marketing:</h4>
+          <div className="w-full h-8 bg-black/30 rounded-lg overflow-hidden flex">
+            <div className="h-full bg-purple-800/70 w-[35%] flex items-center justify-center">
+              <p className="text-xs text-white">Social media (35%)</p>
+            </div>
+            <div className="h-full bg-purple-700/70 w-[25%] flex items-center justify-center">
+              <p className="text-xs text-white">Conținut (25%)</p>
+            </div>
+            <div className="h-full bg-purple-600/70 w-[20%] flex items-center justify-center">
+              <p className="text-xs text-white">Parteneriate (20%)</p>
+            </div>
+            <div className="h-full bg-purple-500/70 w-[20%] flex items-center justify-center">
+              <p className="text-xs text-white">Email (20%)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Slide>
 
 
 
 {/* Slide 5: Solution - App Showcase with larger text and images */}
 <Slide id="solution" accentColor="green">
-  <div className="space-y-5">
+  <div className="space-y-8">
     <div className="flex items-center gap-3">
       <Rocket className="text-green-500" size={30} />
       <h2 className="text-3xl font-bold">Soluția Noastră</h2>
     </div>
 
-    <div className="glass p-5 rounded-lg space-y-4">
-      <h3 className="text-lg font-medium text-center mb-3">Aplicația PlastiCoin - Produsul Minim Viabil (MVP)</h3>
+    <div className="space-y-6">
+      <h3 className="text-xl font-medium text-center">Aplicația PlastiCoin - Produsul Minim Viabil (MVP)</h3>
       
-      <div className="grid md:grid-cols-3 gap-5">
-        {/* Screen 1: Main Screen - Larger */}
-        <div className="flex flex-col items-center">
-          <div className="w-[90%] max-w-[200px] rounded-lg border border-green-500/20 shadow-md mb-3">
+      <div className="grid md:grid-cols-3 gap-8">
+        {/* Screen 1: Main Screen */}
+        <div className="flex flex-col items-center group">
+          <div className="w-full max-w-[280px] rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-green-500/20">
             <img 
               src="/mvp1.png" 
               alt="Dashboard Principal PlastiCoin" 
@@ -848,8 +1185,246 @@ const Index = () => {
 
 
 
+    <Slide id="business-model-canvas" variant="center" accentColor="purple">
+      {/* Background with gradient and subtle pattern */}
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+        <div className="absolute bg-gray-900/95 inset-0 z-10"></div>
+        
+        {/* Abstract geometric shapes */}
+        <div className="absolute top-[-10%] right-[-15%] w-[45%] h-[45%] rounded-full bg-gradient-to-br from-purple-700/20 to-purple-500/10 blur-3xl"></div>
+        <div className="absolute bottom-[-15%] left-[-10%] w-[40%] h-[40%] rounded-full bg-gradient-to-tr from-purple-600/20 to-indigo-400/5 blur-3xl"></div>
+        
+        {/* Decorative grid pattern */}
+        <div className="absolute inset-0 opacity-10" 
+             style={{ 
+               backgroundImage: 'radial-gradient(circle, rgba(167, 139, 250, 0.2) 1px, transparent 1px)', 
+               backgroundSize: '25px 25px' 
+             }}>
+        </div>
+      </div>
 
+      {/* Main content */}
+      <div className="relative z-30 flex flex-col items-center w-full h-full p-5">
+        {/* Title */}
+        <h2 className="text-3xl md:text-4xl font-black text-purple-400 mb-5"
+          style={{ textShadow: "0 0 20px rgba(167, 139, 250, 0.4)" }}>
+          BUSINESS MODEL CANVAS
+        </h2>
+        
+        {/* Canvas Grid */}
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-3 w-full max-w-6xl">
+          {/* Row 1 */}
+          
+          {/* 1. Problem - 1 column */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-2">
+              <AlertTriangle className="text-purple-400" size={20} />
+              <h3 className="text-base font-bold text-white">Problema</h3>
+            </div>
+            <ul className="space-y-1 flex-grow text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Rata scăzută de reciclare din lipsa motivației</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Lipsă transparență în lanțul reciclării</span>
+              </li>
+            </ul>
+          </div>
 
+          {/* 2. Solution - 1 column */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-2">
+              <Lightbulb className="text-purple-400" size={20} />
+              <h3 className="text-base font-bold text-white">Soluția</h3>
+            </div>
+            <ul className="space-y-1 flex-grow text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Platformă digitală cu recompense în tokeni</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Urmărire digitală a fluxului deșeurilor</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* 3. Value Proposition - 1 column */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-2">
+              <Award className="text-purple-400" size={20} />
+              <h3 className="text-base font-bold text-white">Propunere de valoare</h3>
+            </div>
+            <ul className="space-y-1 flex-grow text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Utilizatorii sunt recompensați pentru reciclare</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Trasabilitate și branding eco pentru companii</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* 4. Competitive Advantage - 1 column */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-2">
+              <Zap className="text-purple-400" size={20} />
+              <h3 className="text-base font-bold text-white">Avantaj competitiv</h3>
+            </div>
+            <ul className="space-y-1 flex-grow text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Sistem gamificat și tokenizare</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Integrare IoT pentru validare automată</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Marketplace eco integrat</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* 5. Customer Segments - 1 column */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-2">
+              <Users className="text-purple-400" size={20} />
+              <h3 className="text-base font-bold text-white">Segmente de clienți</h3>
+            </div>
+            <ul className="space-y-1 flex-grow text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Persoane fizice preocupate de mediu</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Companii care doresc certificare ESG</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Administrații locale</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Row 2 */}
+          
+          {/* 6. Channels - 1 column */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-2">
+              <Share2 className="text-purple-400" size={20} />
+              <h3 className="text-base font-bold text-white">Canale</h3>
+            </div>
+            <ul className="space-y-1 flex-grow text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Aplicație mobilă</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Campanii de educație ecologică</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Parteneriate cu retaileri și autorități</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* 7. Customer Relationships - 1 column */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-2">
+              <HeartHandshake className="text-purple-400" size={20} />
+              <h3 className="text-base font-bold text-white">Relații cu clienții</h3>
+            </div>
+            <ul className="space-y-1 flex-grow text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Asistență prin app</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Comunitate online de reciclatori</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Badge-uri și leaderboard-uri</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* 8. Revenue Streams - 1 column */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-3 flex flex-col">
+            <div className="flex items-center gap-2 mb-2">
+              <DollarSign className="text-purple-400" size={20} />
+              <h3 className="text-base font-bold text-white">Surse de venit</h3>
+            </div>
+            <ul className="space-y-1 flex-grow text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Abonamente B2B pentru companii</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Comisioane din marketplace</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-400 font-bold mt-0.5">•</span>
+                <span className="text-gray-300">Vânzare de date agregate (anonimizate)</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* 9. Cost Structure - 2 columns */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-3 col-span-2 flex flex-col">
+            <div className="flex items-center gap-2 mb-2">
+              <Wallet className="text-purple-400" size={20} />
+              <h3 className="text-base font-bold text-white">Costuri</h3>
+            </div>
+            <div className="grid grid-cols-2 gap-2 flex-grow">
+              <div className="bg-black/20 p-2 rounded-lg">
+                <p className="text-xs text-purple-300 font-medium mb-1">Dezvoltare</p>
+                <p className="text-xs text-gray-300">Software + hardware</p>
+              </div>
+              <div className="bg-black/20 p-2 rounded-lg">
+                <p className="text-xs text-purple-300 font-medium mb-1">Infrastructură</p>
+                <p className="text-xs text-gray-300">IoT și cloud</p>
+              </div>
+              <div className="bg-black/20 p-2 rounded-lg">
+                <p className="text-xs text-purple-300 font-medium mb-1">Marketing</p>
+                <p className="text-xs text-gray-300">Educație și achiziție</p>
+              </div>
+              <div className="bg-black/20 p-2 rounded-lg">
+                <p className="text-xs text-purple-300 font-medium mb-1">Logistică</p>
+                <p className="text-xs text-gray-300">Parteneriate și operațiuni</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Bottom metrics */}
+        <div className="w-full max-w-5xl mt-5 grid grid-cols-3 gap-3">
+          <div className="bg-black/40 p-3 rounded-lg text-center backdrop-blur-sm border border-purple-500/20">
+            <p className="text-xs text-gray-400 mb-1">Impact de mediu estimat</p>
+            <p className="text-lg font-bold text-purple-400">+40% rată de reciclare</p>
+          </div>
+          <div className="bg-black/40 p-3 rounded-lg text-center backdrop-blur-sm border border-purple-500/20">
+            <p className="text-xs text-gray-400 mb-1">ROI pentru companii partenere</p>
+            <p className="text-lg font-bold text-purple-400">3.2x în 2 ani</p>
+          </div>
+          <div className="bg-black/40 p-3 rounded-lg text-center backdrop-blur-sm border border-purple-500/20">
+            <p className="text-xs text-gray-400 mb-1">Utilizatori proiectați (an 1)</p>
+            <p className="text-lg font-bold text-purple-400">25,000+</p>
+          </div>
+        </div>
+      </div>
+    </Slide>
 
 
 
@@ -947,7 +1522,109 @@ const Index = () => {
   </div>
 </Slide>
 
+ <Slide id="conclusion" variant="center" accentColor="purple">
+      {/* Background with gradient and light particles */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 via-gray-900/95 to-indigo-900/80"></div>
+        
+        {/* Random particles */}
+        {Array.from({ length: 40 }).map((_, i) => (
+          <div 
+            key={i}
+            className="absolute w-1 h-1 rounded-full bg-purple-300/40"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              opacity: Math.random() * 0.7 + 0.3,
+              animation: `twinkle ${Math.random() * 4 + 3}s ease-in-out infinite`
+            }}
+          ></div>
+        ))}
+        
+        {/* Larger glowing orbs */}
+        <div className="absolute top-[20%] right-[15%] w-[150px] h-[150px] rounded-full bg-purple-600/10 blur-3xl"></div>
+        <div className="absolute bottom-[15%] left-[10%] w-[180px] h-[180px] rounded-full bg-indigo-500/10 blur-3xl"></div>
+      </div>
 
+      {/* Main content */}
+      <div className="relative z-30 flex flex-col items-center w-full h-full px-8 py-12">
+        {/* Title */}
+        <div className="flex items-center gap-3 mb-6">
+          <CheckCircle className="text-purple-400" size={32} />
+          <h2 className="text-4xl md:text-5xl font-black text-purple-400"
+            style={{ textShadow: "0 0 20px rgba(167, 139, 250, 0.4)" }}>
+            CONCLUZIE
+          </h2>
+        </div>
+        
+        {/* Main conclusion text in a highlighted box */}
+        <div className="max-w-4xl w-full bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-purple-500/30 mb-8">
+          <p className="text-lg md:text-xl text-gray-100 leading-relaxed">
+            <span className="text-purple-300 font-semibold">PlastiCoin</span> redefinește modul în care privim reciclarea – nu ca o obligație, ci ca o oportunitate. Într-un context global în care sustenabilitatea devine prioritate, propunem un sistem care motivează, educă și aduce transparență în lanțul de reciclare.
+          </p>
+        </div>
+        
+        {/* Key points cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl w-full mb-6">
+          {/* Point 1 */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4
+                         transition-all duration-300 hover:bg-black/40 hover:border-purple-400/40">
+            <div className="flex items-center gap-2 mb-3">
+              <Recycle className="text-purple-400" size={20} />
+              <h3 className="text-lg font-bold text-white">Tehnologie & Tokenizare</h3>
+            </div>
+            <p className="text-sm text-gray-300">
+              Combinație inteligentă de tehnologie blockchain și gamificare pentru motivarea utilizatorilor.
+            </p>
+          </div>
+          
+          {/* Point 2 */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4
+                         transition-all duration-300 hover:bg-black/40 hover:border-purple-400/40">
+            <div className="flex items-center gap-2 mb-3">
+              <Users className="text-purple-400" size={20} />
+              <h3 className="text-lg font-bold text-white">Comunitate Activă</h3>
+            </div>
+            <p className="text-sm text-gray-300">
+              Creăm o comunitate în care fiecare acțiune de reciclare este recunoscută și recompensată.
+            </p>
+          </div>
+          
+          {/* Point 3 */}
+          <div className="bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/20 p-4
+                         transition-all duration-300 hover:bg-black/40 hover:border-purple-400/40">
+            <div className="flex items-center gap-2 mb-3">
+              <Leaf className="text-purple-400" size={20} />
+              <h3 className="text-lg font-bold text-white">Ecosistem Colaborativ</h3>
+            </div>
+            <p className="text-sm text-gray-300">
+              Conectăm cetățenii, companiile și autoritățile într-un ecosistem cu impact pozitiv măsurabil.
+            </p>
+          </div>
+        </div>
+        
+        {/* Final statement */}
+        <div className="max-w-3xl w-full bg-gradient-to-r from-purple-900/60 via-purple-800/60 to-purple-900/60 rounded-xl p-5 border border-purple-400/30">
+          <p className="text-center text-lg font-medium text-white">
+            PlastiCoin nu este doar un proiect ecologic – este o 
+            <span className="text-purple-300 font-bold"> mișcare digitală </span>
+            pentru un viitor circular și inteligent.
+          </p>
+        </div>
+        
+        {/* Call to action at the bottom */}
+        <div className="flex flex-col items-center mt-auto pt-5">
+          <div className="flex items-center gap-2 text-white mb-1">
+            <Globe className="text-purple-400" size={20} />
+            <span className="text-base">www.plasticoin.eco</span>
+          </div>
+          <p className="text-sm text-purple-300 flex items-center gap-1">
+            <span>Alătură-te mișcării</span>
+            <ArrowRight size={14} />
+          </p>
+        </div>
+      </div>
+    </Slide>
 
 
       {/* Slide 8: Feedback */}
